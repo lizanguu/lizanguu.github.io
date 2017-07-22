@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-22T17:26:56.000Z</updated>
+  <updated>2017-07-22T18:00:41.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,16 @@
     <link href="http://yoursite.com/2017/07/23/HTKModel/"/>
     <id>http://yoursite.com/2017/07/23/HTKModel/</id>
     <published>2017-07-22T17:24:28.000Z</published>
-    <updated>2017-07-22T17:26:56.000Z</updated>
+    <updated>2017-07-22T18:00:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>HMM Model definition data type</p>
+<h2 id="HMM-Definition"><a href="#HMM-Definition" class="headerlink" title="HMM Definition"></a>HMM Definition</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">typedef struct &#123;</div><div class="line">	struct _HMMSet *owner;</div><div class="line">&#125; HMMDef;</div></pre></td></tr></table></figure>
+<h2 id="HMM-Set"><a href="#HMM-Set" class="headerlink" title="HMM Set"></a>HMM Set</h2>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;HMM Model definition data type&lt;/p&gt;
+&lt;h2 id=&quot;HMM-Definition&quot;&gt;&lt;a href=&quot;#HMM-Definition&quot; class=&quot;headerlink&quot; title=&quot;HMM Definition&quot;&gt;&lt;/a&gt;HMM De
     
     </summary>
     
