@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-22T18:02:21.000Z</updated>
+  <updated>2017-08-02T17:11:16.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Memory Heap</title>
+    <link href="http://yoursite.com/2017/08/03/mem-heap/"/>
+    <id>http://yoursite.com/2017/08/03/mem-heap/</id>
+    <published>2017-08-02T17:11:16.000Z</published>
+    <updated>2017-08-02T17:11:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>仿nginx内存池的实现</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="内存块"><a href="#内存块" class="headerlink" title="内存块"></a>内存块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">typedef struct ltk_heap_block &#123;</div><div class="line">	char *last;</div><div class="line">	char *end;</div><div class="line">	ltk_heap_t *next;</div><div class="line">&#125; ltk_heap_block_t;</div></pre></td></tr></table></figure>
+<h3 id="大内存块"><a href="#大内存块" class="headerlink" title="大内存块"></a>大内存块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef struct ltk_heap_large &#123;</div><div class="line">	void *alloc;</div><div class="line">	ltk_heap_large_t *next;</div><div class="line">&#125; ltk_heap_large_t;</div></pre></td></tr></table></figure>
+<h3 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">typedef struct ltk_heap_cleanup &#123;</div><div class="line">	ltk_heap_cleanup_pt handler;</div><div class="line">	void *data;</div><div class="line">	ltk_heap_cleanup_t *next;</div><div class="line">&#125; ltk_heap_cleanup_t;</div></pre></td></tr></table></figure>
+<h3 id="内存池"><a href="#内存池" class="headerlink" title="内存池"></a>内存池</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">typedef struct ltk_heap &#123;</div><div class="line">	size_t max;</div><div class="line">	ltk_heap_block_t block;</div><div class="line">	ltk_heap_t *current;</div><div class="line">	ltk_heap_large_t *large;</div><div class="line">	ltk_heap_cleanup_t *cleanup;</div><div class="line">&#125;ltk_heap_t;</div></pre></td></tr></table></figure>
+<h2 id="内存操作"><a href="#内存操作" class="headerlink" title="内存操作"></a>内存操作</h2><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;仿nginx内存池的实现&lt;/p&gt;
+&lt;h2 id=&quot;数据结构&quot;&gt;&lt;a href=&quot;#数据结构&quot; class=&quot;headerlink&quot; title=&quot;数据结构&quot;&gt;&lt;/a&gt;数据结构&lt;/h2&gt;&lt;h3 id=&quot;内存块&quot;&gt;&lt;a href=&quot;#内存块&quot; class=&quot;headerlink
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>HTKModel</title>
